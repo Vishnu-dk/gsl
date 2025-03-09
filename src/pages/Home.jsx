@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaTrophy, FaFutbol, FaShieldAlt, FaCalendarAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FaTrophy, FaFutbol, FaShieldAlt, FaCalendarAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -12,11 +12,13 @@ const Home = () => {
           <Link to="/points-table" className="cta-button">
             <FaTrophy /> View Standings
           </Link>
-
+          <Link to="/fixtures" className="cta-button">
+            <FaCalendarAlt /> Check Fixtures
+          </Link>
         </div>
       </div>
 
-      <div className="highlights">
+      <div className="highlights" style={{ display: "flex" }}>
         <div className="highlight-card">
           <FaFutbol className="highlight-icon" />
           <h3>Top Scorers</h3>

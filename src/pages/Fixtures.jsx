@@ -1,13 +1,18 @@
-import React from 'react';
-import { FaCalendarAlt } from 'react-icons/fa';
+import React from "react";
+import { FaCalendarAlt } from "react-icons/fa";
 
 const Fixtures = ({ matches = [] }) => {
   // Debugging: Log the matches prop
-  console.log("Fixtures Matches Prop:", matches);
+  // console.log("Fixtures Matches Prop:", matches);
 
   return (
-    <div className="fixtures">
-      <h2><FaCalendarAlt /> Fixtures & Results</h2>
+    <div
+      className="fixtures"
+      style={{ paddingTop: "10px", paddingBottom: "10px" }}
+    >
+      <h2>
+        <FaCalendarAlt /> Fixtures & Results
+      </h2>
       <div className="table-container">
         <div className="table-header">
           <span>Date</span>
@@ -17,9 +22,16 @@ const Fixtures = ({ matches = [] }) => {
         {matches.map((match, index) => (
           <div key={index} className="table-row">
             <span>{match.date}</span>
-            <span>{match.teamA} vs {match.teamB}</span>
             <span>
-              {match.result === null ? 'Upcoming' : match.result}
+              {match.teamA} vs {match.teamB}
+            </span>
+            <span
+              style={{
+                color: !match.result ? "#a31621" : "#1c1c1c",
+                fontWeight: 600,
+              }}
+            >
+              {match.result === null ? "Upcoming" : match.result}
             </span>
           </div>
         ))}
