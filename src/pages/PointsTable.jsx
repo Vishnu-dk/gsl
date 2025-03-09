@@ -42,8 +42,8 @@ const PointsTable = ({ matches = [] }) => {
       wins: 0,
       draws: 1,
       losses: 3,
-      goalsFor: 0,
-      goalsAgainst: 5,
+      goalsFor: 1,
+      goalsAgainst: 6,
     },
     {
       name: "CS UNITED",
@@ -63,7 +63,7 @@ const PointsTable = ({ matches = [] }) => {
       draws: 0,
       losses: 2,
       goalsFor: 5,
-      goalsAgainst: 3,
+      goalsAgainst: 4,
     },
     {
       name: "GUNNERS FC",
