@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Home from './pages/Home';
+import PointsTable from './pages/PointsTable';
+import TopScorers from './pages/TopScorers';
+import CleanSheets from './pages/CleanSheets';
+import Fixtures from './pages/Fixtures';
 import './App.css';
+import './index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/points-table" element={<PointsTable />} />
+          <Route path="/top-scorers" element={<TopScorers />} />
+          <Route path="/clean-sheets" element={<CleanSheets />} />
+          <Route path="/fixtures" element={<Fixtures />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
