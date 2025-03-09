@@ -44,7 +44,11 @@ const Navbar = () => {
               <FaShieldAlt className="nav-icon" /> Clean Sheets
             </Link>
           </li>
-
+          <li>
+            <Link to="/fixtures" onClick={toggleMenu}>
+              <FaCalendarAlt className="nav-icon" /> Fixtures
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

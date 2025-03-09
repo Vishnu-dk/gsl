@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTrophy } from "react-icons/fa";
 import "../App.css";
-import TopScorers from "./TopScorers"; // Import the TopScorers component
+
 
 const PointsTable = ({ matches = [] }) => {
   const teams = [
