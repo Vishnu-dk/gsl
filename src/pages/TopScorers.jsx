@@ -1,29 +1,36 @@
-import React from 'react';
-import { FaFutbol } from 'react-icons/fa';
+import React from "react";
+import { FaFutbol } from "react-icons/fa";
+import teams from "../utils/teampoints";
+import scorers from "../utils/playerpoints";
 
-const TopScorers = ({ teamsWithPoints = [] }) => {
-  const scorers = [
-    { name: 'ARJUN', team: 'FC REMONTADA', goals: 1 },
-    { name: 'FAHEEM', team: 'FC REMONTADA', goals: 2 },
-    { name: 'SINAN', team: 'FC REMONTADA', goals: 2 },
-    { name: 'MISHEL', team: 'SPORTING FC', goals: 3 },
-    { name: 'SONU', team: 'SPORTING FC', goals: 1 },
-    { name: 'RAHID', team: 'SPORTING FC', goals: 1 },
-    { name: 'SUJITH', team: 'GUNNERS FC', goals: 1 },
-    { name: 'SREEHARI', team: 'CS UNITED', goals: 2 },
-    { name: 'JISHNU', team: 'CS UNITED', goals: 2 },
-    { name: 'AKHIL P', team: 'CS UNITED', goals: 1 },
-    { name: 'NANDHAKISHOR', team: 'SHARTAAN FC', goals: 1 },
-    { name: 'AKHIL', team: 'SHARTAAN FC', goals: 1 },
-    { name: 'SOORYAKIRAN', team: 'TIHAR FC', goals: 1 },
-    { name: 'NABEEL', team: 'BATHAKKA FC', goals: 1 },
-    { name: 'ADEEB', team: 'BATHAKKA FC', goals: 1 },
-    { name: 'HASHIM', team: 'SANTOS FC', goals: 1 },
-    { name: 'YASEEN', team: 'SANTOS FC', goals: 1 },
-  ];
+const TopScorers = () => {
+  // const scorers = [
+  //   { name: "ARJUN", team: "FC REMONTADA", goals: 1 },
+  //   { name: "FAHEEM", team: "FC REMONTADA", goals: 2 },
+  //   { name: "SINAN", team: "FC REMONTADA", goals: 2 },
+  //   { name: "MISHEL", team: "SPORTING FC", goals: 3 },
+  //   { name: "SONU", team: "SPORTING FC", goals: 1 },
+  //   { name: "RAHID", team: "SPORTING FC", goals: 1 },
+  //   { name: "SUJITH", team: "GUNNERS FC", goals: 1 },
+  //   { name: "SREEHARI", team: "CS UNITED", goals: 2 },
+  //   { name: "JISHNU", team: "CS UNITED", goals: 2 },
+  //   { name: "AKHIL P", team: "CS UNITED", goals: 1 },
+  //   { name: "NANDHAKISHOR", team: "SHARTAAN FC", goals: 1 },
+  //   { name: "AKHIL", team: "SHARTAAN FC", goals: 1 },
+  //   { name: "SOORYAKIRAN", team: "TIHAR FC", goals: 1 },
+  //   { name: "NABEEL", team: "BATHAKKA FC", goals: 1 },
+  //   { name: "ADEEB", team: "BATHAKKA FC", goals: 1 },
+  //   { name: "HASHIM", team: "SANTOS FC", goals: 1 },
+  //   { name: "YASEEN", team: "SANTOS FC", goals: 1 },
+  // ];
+
+  const teamsWithPoints = teams.map((team) => ({
+    ...team,
+    points: team.wins * 3 + team.draws * 1, // 3 points for a win, 1 point for a draw
+  }));
 
   // Debugging: Log the teamsWithPoints prop
-  console.log('teamsWithPoints:', teamsWithPoints);
+  console.log("teamsWithPoints:", teamsWithPoints);
 
   // Add matchesPlayed and teamPoints to each scorer
   const scorersWithTeamData = scorers.map((scorer) => {
@@ -36,7 +43,7 @@ const TopScorers = ({ teamsWithPoints = [] }) => {
   });
 
   // Debugging: Log the mapped scorersWithTeamData
-  console.log('scorersWithTeamData:', scorersWithTeamData);
+  console.log("scorersWithTeamData:", scorersWithTeamData);
 
   // Sort the scorers array
   const sortedScorers = scorersWithTeamData.sort((a, b) => {
@@ -54,14 +61,15 @@ const TopScorers = ({ teamsWithPoints = [] }) => {
 
   return (
     <div className="top-scorers">
-      <h2><FaFutbol /> Top Scorers</h2>
+      <h2>
+        <FaFutbol /> Top Scorers
+      </h2>
       <div className="table-container">
         <div className="table-header">
           <span>Rank</span>
           <span>Player</span>
           <span>Team</span>
           <span>Goals</span>
-
         </div>
         {sortedScorers.map((player, index) => (
           <div key={index} className="table-row">
@@ -69,7 +77,6 @@ const TopScorers = ({ teamsWithPoints = [] }) => {
             <span>{player.name}</span>
             <span>{player.team}</span>
             <span>{player.goals}</span>
-
           </div>
         ))}
       </div>
