@@ -110,14 +110,14 @@ const Matches = () => {
       date: "2025-03-10",
       teamA: "CS UNITED",
       teamB: "GUNNERS FC",
-      result: null,
-    }, // Upcoming match
+      result: '1-0',
+    }, 
     {
       date: "2025-03-10",
       teamA: "REMONTADA FC",
       teamB: "SHARTAAN FC",
-      result: null,
-    }, // Upcoming match
+      result: '2-0',
+    }, 
     {
       date: "2025-03-11",
       teamA: "BATTAKKA FC",

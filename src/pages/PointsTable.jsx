@@ -4,89 +4,6 @@ import "../App.css";
 import teams from "../utils/teampoints";
 
 const PointsTable = ({ matches = [] }) => {
-  // const teams = [
-  //   {
-  //     name: "BATHAKKA FC",
-  //     logo: "/logos/BATHAKKA FC.png",
-  //     played: 4,
-  //     wins: 1,
-  //     draws: 2,
-  //     losses: 1,
-  //     goalsFor: 2,
-  //     goalsAgainst: 3,
-  //   },
-  //   {
-  //     name: "SPORTING FC",
-  //     logo: "/logos/SPORTING FC.png",
-  //     played: 5,
-  //     wins: 3,
-  //     draws: 2,
-  //     losses: 0,
-  //     goalsFor: 5,
-  //     goalsAgainst: 1,
-  //   },
-  //   {
-  //     name: "SANTOS FC",
-  //     logo: "/logos/SANTOS FC.png",
-  //     played: 5,
-  //     wins: 1,
-  //     draws: 1,
-  //     losses: 3,
-  //     goalsFor: 2,
-  //     goalsAgainst: 3,
-  //   },
-  //   {
-  //     name: "TIHAR FC",
-  //     logo: "/logos/TIHAR FC.png",
-  //     played: 5,
-  //     wins: 0,
-  //     draws: 1,
-  //     losses: 4,
-  //     goalsFor: 1,
-  //     goalsAgainst: 8,
-  //   },
-  //   {
-  //     name: "CS UNITED",
-  //     logo: "/logos/CS-UNITED.png",
-  //     played: 4,
-  //     wins: 2,
-  //     draws: 2,
-  //     losses: 0,
-  //     goalsFor: 5,
-  //     goalsAgainst: 2,
-  //   },
-  //   {
-  //     name: "FC REMONTADA",
-  //     logo: "/logos/F C REMONTADA.png",
-  //     played: 4,
-  //     wins: 2,
-  //     draws: 0,
-  //     losses: 2,
-  //     goalsFor: 5,
-  //     goalsAgainst: 4,
-  //   },
-  //   {
-  //     name: "GUNNERS FC",
-  //     logo: "/logos/GUNNERS FC.png",
-  //     played: 4,
-  //     wins: 1,
-  //     draws: 3,
-  //     losses: 0,
-  //     goalsFor: 1,
-  //     goalsAgainst: 0,
-  //   },
-  //   {
-  //     name: "SHARTAAN FC",
-  //     logo: "/logos/SHARTAAN FC.png",
-  //     played: 5,
-  //     wins: 1,
-  //     draws: 3,
-  //     losses: 1,
-  //     goalsFor: 2,
-  //     goalsAgainst: 2,
-  //   },
-  // ];
-
   // Calculate points for each team
   const teamsWithPoints = teams.map((team) => ({
     ...team,
@@ -130,23 +47,33 @@ const PointsTable = ({ matches = [] }) => {
 
   const headToHeadResults = getHeadToHeadResults();
 
-  // Sort teams by points, then head-to-head, then goal difference
+  // Sort teams by points, then head-to-head, then goal difference, then goals scored, then goals conceded
   const sortedTeams = teamsWithPoints.sort((a, b) => {
-    // Sort by points (descending)
+    // 1. Sort by points (descending)
     if (b.points !== a.points) {
       return b.points - a.points;
     }
 
-    // Head-to-head comparison
+    // 2. Head-to-head comparison
     const headToHead = headToHeadResults[a.name]?.[b.name] || 0;
     if (headToHead !== 0) {
       return headToHead;
     }
 
-    // If head-to-head is also tied, sort by goal difference
+    // 3. Sort by goal difference (descending)
     const goalDifferenceA = a.goalsFor - a.goalsAgainst;
     const goalDifferenceB = b.goalsFor - b.goalsAgainst;
-    return goalDifferenceB - goalDifferenceA;
+    if (goalDifferenceB !== goalDifferenceA) {
+      return goalDifferenceB - goalDifferenceA;
+    }
+
+    // 4. Sort by goals scored (descending)
+    if (b.goalsFor !== a.goalsFor) {
+      return b.goalsFor - a.goalsFor;
+    }
+
+    // 5. Sort by goals conceded (ascending)
+    return a.goalsAgainst - b.goalsAgainst;
   });
 
   return (
@@ -200,8 +127,6 @@ const PointsTable = ({ matches = [] }) => {
           </p>
         </div>
       </div>
-
-      {/* Pass teamsWithPoints to TopScorers */}
     </div>
   );
 };
