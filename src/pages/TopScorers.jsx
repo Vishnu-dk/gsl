@@ -11,24 +11,32 @@ const TopScorers = ({ teamsWithPoints = [] }) => {
     { name: 'RAHID', team: 'SPORTING FC', goals: 1 },
     { name: 'SUJITH', team: 'GUNNERS FC', goals: 1 },
     { name: 'SREEHARI', team: 'CS UNITED', goals: 2 },
-    { name: 'JISHNU', team: 'CS UNITED', goals: 1 },
+    { name: 'JISHNU', team: 'CS UNITED', goals: 2 },
     { name: 'AKHIL P', team: 'CS UNITED', goals: 1 },
     { name: 'NANDHAKISHOR', team: 'SHARTAAN FC', goals: 1 },
     { name: 'AKHIL', team: 'SHARTAAN FC', goals: 1 },
     { name: 'SOORYAKIRAN', team: 'TIHAR FC', goals: 1 },
     { name: 'NABEEL', team: 'BATHAKKA FC', goals: 1 },
     { name: 'ADEEB', team: 'BATHAKKA FC', goals: 1 },
+    { name: 'HASHIM', team: 'SANTOS FC', goals: 1 },
+    { name: 'YASEEN', team: 'SANTOS FC', goals: 1 },
   ];
+
+  // Debugging: Log the teamsWithPoints prop
+  console.log('teamsWithPoints:', teamsWithPoints);
 
   // Add matchesPlayed and teamPoints to each scorer
   const scorersWithTeamData = scorers.map((scorer) => {
     const team = teamsWithPoints.find((team) => team.name === scorer.team);
     return {
       ...scorer,
-      matchesPlayed: team ? team.played : 0,
-      teamPoints: team ? team.points : 0,
+      matchesPlayed: team ? team.played : 0, // Fallback to 0 if team not found
+      teamPoints: team ? team.points : 0, // Fallback to 0 if team not found
     };
   });
+
+  // Debugging: Log the mapped scorersWithTeamData
+  console.log('scorersWithTeamData:', scorersWithTeamData);
 
   // Sort the scorers array
   const sortedScorers = scorersWithTeamData.sort((a, b) => {

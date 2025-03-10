@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
+import Matches from "./Matches";
 
 const Fixtures = ({ matches = [] }) => {
   // Debugging: Log the matches prop

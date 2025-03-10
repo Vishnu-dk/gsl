@@ -97,13 +97,13 @@ const Matches = () => {
       date: "2025-03-09",
       teamA: "SHARTAAN FC",
       teamB: "SPORTING FC",
-      result: "0-1",
+      result: null,
     }, // Upcoming match
     {
       date: "2025-03-09",
       teamA: "BATTAKKA FC",
       teamB: "GUNNERS FC",
-      result: "0-0",
+      result: null,
     }, // Upcoming match
     { date: "2025-03-10", teamA: "TIHAR FC", teamB: "SANTOS FC", result: null }, // Upcoming match
     {
@@ -167,7 +167,7 @@ const Matches = () => {
   // console.log("Matches Data:", matches);
 
   return (
-    <div className="mt-2" style={{ paddingTop: "10px" }}>
+    <div className="mt-2" style={{marginTop: "8px"}}>
       <Fixtures matches={matches} />
     </div>
   );
