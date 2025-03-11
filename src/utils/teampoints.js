@@ -2,9 +2,9 @@ const teams = [
   {
     name: "BATHAKKA FC",
     logo: "/logos/BATHAKKA FC.png",
-    played: 4,
+    played: 5,
     wins: 1,
-    draws: 2,
+    draws: 3,
     losses: 1,
     goalsFor: 2,
     goalsAgainst: 3,
@@ -12,9 +12,9 @@ const teams = [
   {
     name: "SPORTING FC",
     logo: "/logos/SPORTING FC.png",
-    played: 5,
+    played: 6,
     wins: 3,
-    draws: 2,
+    draws: 3,
     losses: 0,
     goalsFor: 5,
     goalsAgainst: 1,
