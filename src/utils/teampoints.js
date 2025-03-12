@@ -2,11 +2,11 @@ const teams = [
   {
     name: "BATHAKKA FC",
     logo: "/logos/BATHAKKA FC.png",
-    played: 5,
-    wins: 1,
+    played: 6,
+    wins: 2,
     draws: 3,
     losses: 1,
-    goalsFor: 2,
+    goalsFor: 3,
     goalsAgainst: 3,
   },
   {
