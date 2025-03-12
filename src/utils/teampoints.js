@@ -72,12 +72,12 @@ const teams = [
   {
     name: "SHARTAAN FC",
     logo: "/logos/SHARTAAN FC.png",
-    played: 6,
+    played: 7,
     wins: 1,
     draws: 3,
-    losses: 2,
+    losses: 3,
     goalsFor: 2,
-    goalsAgainst: 4,
+    goalsAgainst: 5,
   },
 ];
 

@@ -41,6 +41,7 @@ const PointsTable = ({ matches = [] }) => {
       headToHeadResults[teamB][teamA] =
         goalsB > goalsA ? 1 : goalsB === goalsA ? 0 : -1;
     });
+    console.log(headToHeadResults)
 
     return headToHeadResults;
   };

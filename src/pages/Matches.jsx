@@ -7,7 +7,7 @@ const Matches = () => {
       date: "2025-03-04",
       teamA: "FC REMONTADA",
       teamB: "SPORTING FC",
-      result: "1-2",
+      result: "1-2 ",
     },
     {
       date: "2025-03-04",
@@ -135,20 +135,20 @@ const Matches = () => {
       date: "2025-03-12",
       teamA: "SHARTAAN FC",
       teamB: "BATTAKKA FC",
-      result: null,
-    }, // Upcoming match
+      result: '0-1',
+    }, 
     {
       date: "2025-03-12",
       teamA: "SANTOS FC",
       teamB: "SPORTING FC",
       result: null,
-    }, // Upcoming match
+    }, 
     {
       date: "2025-03-12",
       teamA: "GUNNERS FC",
       teamB: "TIHAR FC",
       result: null,
-    }, // Upcoming match
+    }, 
     {
       date: "2025-03-13",
       teamA: "FC REMONTADA",

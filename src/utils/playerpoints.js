@@ -16,6 +16,7 @@ const scorers = [
     { name: "SHANIF", team: "TIHAR FC", goals: 1 },
     { name: "NABEEL", team: "BATHAKKA FC", goals: 1 },
     { name: "ADEEB", team: "BATHAKKA FC", goals: 1 },
+    { name: "SAHAJ", team: "BATHAKKA FC", goals: 1 },
     { name: "HASHIM", team: "SANTOS FC", goals: 1 },
     { name: "YASEEN", team: "SANTOS FC", goals: 1 },
   ];
