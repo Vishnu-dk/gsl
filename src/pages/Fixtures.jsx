@@ -44,7 +44,7 @@ const Fixtures = ({ matches = [] }) => {
           </div>
           <div className="table-row">
             <span>2025-03-14</span>
-            <span>TBD VS TBD</span>
+            <span>SPORTING FC VS CS UNITED</span>
             <span
               style={{
                 color: "#a31621",
@@ -64,7 +64,7 @@ const Fixtures = ({ matches = [] }) => {
           </div>
           <div className="table-row">
             <span>2025-03-14</span>
-            <span>TBD VS TBD</span>
+            <span>BATHAKKA FC VS FC REMONTADA</span>
             <span
               style={{
                 color: "#a31621",

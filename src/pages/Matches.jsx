@@ -153,14 +153,14 @@ const Matches = () => {
       date: "2025-03-13",
       teamA: "FC REMONTADA",
       teamB: "BATTAKKA FC",
-      result: null,
-    }, // Upcoming match
+      result: '2-1',
+    }, 
     {
       date: "2025-03-13",
       teamA: "CS UNITED",
       teamB: "SANTOS FC",
-      result: null,
-    }, // Upcoming match
+      result: '0-1',
+    }, 
   ];
 
   // // Debugging: Log the matches data

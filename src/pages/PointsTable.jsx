@@ -41,36 +41,34 @@ const PointsTable = ({ matches = [] }) => {
       headToHeadResults[teamB][teamA] =
         goalsB > goalsA ? 1 : goalsB === goalsA ? 0 : -1;
     });
-    console.log(headToHeadResults)
 
     return headToHeadResults;
   };
 
   const headToHeadResults = getHeadToHeadResults();
 
-  // Sort teams by points, then head-to-head, then goal difference, then goals scored, then goals conceded
+  // Sort teams by points, then draws, then goals scored, then goal difference, then goals conceded
   const sortedTeams = teamsWithPoints.sort((a, b) => {
     // 1. Sort by points (descending)
     if (b.points !== a.points) {
       return b.points - a.points;
     }
 
-    // 2. Head-to-head comparison
-    const headToHead = headToHeadResults[a.name]?.[b.name] || 0;
-    if (headToHead !== 0) {
-      return headToHead;
+    // 2. Sort by number of draws (descending)
+    if (b.draws !== a.draws) {
+      return b.draws - a.draws;
     }
 
-    // 3. Sort by goal difference (descending)
+    // 3. Sort by goals scored (descending)
+    if (b.goalsFor !== a.goalsFor) {
+      return b.goalsFor - a.goalsFor;
+    }
+
+    // 4. Sort by goal difference (descending)
     const goalDifferenceA = a.goalsFor - a.goalsAgainst;
     const goalDifferenceB = b.goalsFor - b.goalsAgainst;
     if (goalDifferenceB !== goalDifferenceA) {
       return goalDifferenceB - goalDifferenceA;
-    }
-
-    // 4. Sort by goals scored (descending)
-    if (b.goalsFor !== a.goalsFor) {
-      return b.goalsFor - a.goalsFor;
     }
 
     // 5. Sort by goals conceded (ascending)
