@@ -1,10 +1,11 @@
 const scorers = [
-    { name: "ARJUN", team: "FC REMONTADA", goals: 3 },
+    { name: "ARJUN", team: "FC REMONTADA", goals: 4 },
+    { name: "SIDHARTHAN", team: "FC REMONTADA", goals: 1 },
     { name: "FAHEEM", team: "FC REMONTADA", goals: 3 },
     { name: "SINAN", team: "FC REMONTADA", goals: 3 },
     { name: "MISHEL", team: "SPORTING FC", goals: 4 },
     { name: "SONU", team: "SPORTING FC", goals: 2 },
-    { name: "RASHID", team: "SPORTING FC", goals: 1 },
+    { name: "RASHID", team: "SPORTING FC", goals: 3 },
     { name: "AKHIL", team: "SPORTING FC", goals: 1 },
     { name: "SUJITH", team: "GUNNERS FC", goals: 1 },
     { name: "JAYANAND", team: "GUNNERS FC", goals: 1 },
