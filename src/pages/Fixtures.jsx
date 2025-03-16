@@ -91,7 +91,7 @@ const Fixtures = ({ matches = [] }) => {
                 fontWeight: 600,
               }}
             >
-              Upcoming
+              0-2
             </span>
           </div>
         </div>
@@ -104,7 +104,7 @@ const Fixtures = ({ matches = [] }) => {
           </div>
           <div className="table-row">
             <span>2025-03-17</span>
-            <span>SPORTING FC VS TBD</span>
+            <span>SPORTING FC VS CS UNITED</span>
             <span
               style={{
                 color: "#a31621",

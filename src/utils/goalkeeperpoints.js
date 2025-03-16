@@ -6,8 +6,8 @@ const goalkeepers = [
     { name: 'AKASH KS', team: 'TIHAR FC', cleanSheets: 1, matchesPlayed: 2, goalsConceded: 2 },
     { name: 'RAGIN', team: 'TIHAR FC', cleanSheets: 0, matchesPlayed: 2, goalsConceded: 4 },
     { name: 'AFSAL', team: 'TIHAR FC', cleanSheets: 0, matchesPlayed: 3, goalsConceded: 6 },
-    { name: 'AWIN', team: 'CS UNITED', cleanSheets: 3, matchesPlayed: 8, goalsConceded: 6 },
-    { name: 'KARTHIK', team: 'FC REMONTADA', cleanSheets: 4, matchesPlayed: 8, goalsConceded: 5 },
+    { name: 'AWIN', team: 'CS UNITED', cleanSheets: 4, matchesPlayed: 9, goalsConceded: 6 },
+    { name: 'KARTHIK', team: 'FC REMONTADA', cleanSheets: 4, matchesPlayed: 9, goalsConceded: 7 },
     { name: 'ADITHYA', team: 'SHARTAAN FC', cleanSheets: 3, matchesPlayed: 7, goalsConceded: 4 },
   ];
 
